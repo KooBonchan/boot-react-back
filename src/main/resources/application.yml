@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: card
+  r2dbc:
+    enabled: true
+    url: r2dbc:h2:mem:///testdb
+    username: sa
+    password:
+    pool:
+      enabled: true
+      max-size: 20
+  main:
+    allow-bean-definition-overriding: true
+
+
+server:
+  port: 8094
+
+
+logging.level:
+  root: DEBUG
+  org:
+    hibernate:
+      type.descriptor.sql: trace
+      SQL: DEBUG
+    springframework:
+      data.r2dbc: DEBUG
