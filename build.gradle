@@ -26,6 +26,10 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-webflux-ui
+	implementation 'org.springdoc:springdoc-openapi-webflux-ui:1.8.0'
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
