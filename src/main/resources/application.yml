@@ -1,6 +1,9 @@
 spring:
   application:
     name: card
+  sql:
+    init:
+      mode: always
   r2dbc:
     enabled: true
     url: r2dbc:h2:mem:///testdb
@@ -9,8 +12,10 @@ spring:
     pool:
       enabled: true
       max-size: 20
-  main:
-    allow-bean-definition-overriding: true
+  data:
+    r2dbc.repositories:
+      enabled: true
+  main.allow-bean-definition-overriding: true
 
 
 server:
@@ -18,7 +23,7 @@ server:
 
 
 logging.level:
-  root: DEBUG
+  root: INFO
   org:
     hibernate:
       type.descriptor.sql: trace

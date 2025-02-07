@@ -10,10 +10,10 @@ import org.springframework.data.relational.core.mapping.Table;
 @Getter
 @AllArgsConstructor
 public class Car {
-  @Id int id;
+  @Id long id;
 
-  @Setter
-  private String name, brand, model, color, registrationNumber;
-  @Setter
-  private int modeYear, price;
+  @Setter private String name, brand, model, color, registrationNumber;
+  @Setter private int modelYear, price;
+
+  @Setter long ownerId;
 }

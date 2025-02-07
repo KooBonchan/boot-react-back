@@ -1,7 +1,7 @@
-package com.company.card.controller;
+package com.company.card.legacyMvc.controller;
 
 import com.company.card.domain.Car;
-import com.company.card.service.CarService;
+import com.company.card.legacyMvc.service.CarService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,7 @@ public class CarController {
   }
 
   @GetMapping("car/{id}")
-  public Mono<Car> getCar(int id){
+  public Mono<Car> getCar(Long id){
     return carService.getCar(id);
   }
 }

@@ -1,4 +1,4 @@
-package com.company.card.service;
+package com.company.card.handler;
 
 import com.company.card.domain.Car;
 import com.company.card.repository.CarRepository;
@@ -11,13 +11,13 @@ import reactor.core.publisher.Mono;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class CarService {
+public class CarHandler {
   private final CarRepository carRepository;
 
   public Flux<Car> getCar(){
     return carRepository.findAll();
   }
-  public Mono<Car> getCar(int id){
+  public Mono<Car> getCar(Long id){
     return carRepository.findById(id);
   }
   public Mono<Car> getCar(String name){
