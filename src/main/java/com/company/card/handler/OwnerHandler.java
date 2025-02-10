@@ -20,7 +20,8 @@ public class OwnerHandler {
   private final OwnerRepository ownerRepository;
 
   public Mono<ServerResponse> getOwner(ServerRequest request){
-    var data = ownerRepository.findById(1L)
+    Long id = Long.parseLong(request.pathVariable("id"));
+    var data = ownerRepository.findById(id)
       .flatMap(owner ->
         carRepository
           .findByOwnerId(owner.getId())
